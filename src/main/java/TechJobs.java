@@ -122,18 +122,20 @@ public class TechJobs {
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
 
-
+        // if the array list doesn't have the HashMap
         if (someJobs.isEmpty()){
             System.out.print("No Results");
         }else {
+            // for each Array List index that has a HashMap
             for (HashMap<String, String> job : someJobs) {
                 System.out.println("\n*****");
-                System.out.println("position type: " + job.get("position type"));
                 System.out.println("name: " + job.get("name"));
                 System.out.println("employer: " + job.get("employer"));
                 System.out.println("location: " + job.get("location"));
+                System.out.println("position type: " + job.get("position type"));
                 System.out.println("core competency: " + job.get("core competency"));
                 System.out.println("*****");
+
             }
         }
     }
