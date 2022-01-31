@@ -80,7 +80,7 @@ public class TechJobs {
         // Put the choices in an ordered structure so we can
         // associate an integer with each one
         int i = 0;
-        for (String choiceKey : choices.keySet()) {
+        for (String choiceKey : choices.keySet()) { // loops through each HashMap key/value
             choiceKeys[i] = choiceKey;
             i++;
         }
@@ -91,16 +91,17 @@ public class TechJobs {
 
             // Print available choices
             for (int j = 0; j < choiceKeys.length; j++) {
+                // gets the HashMap value using HashMap key respectively
                 System.out.println("" + j + " - " + choices.get(choiceKeys[j]));
             }
 
-            if (in.hasNextInt()) {
-                choiceIdx = in.nextInt();
+            if (in.hasNextInt()) { // if input is an integer is true
+                choiceIdx = in.nextInt(); // stores integer value from user
                 in.nextLine();
             } else {
                 String line = in.nextLine();
                 boolean shouldQuit = line.equals("x");
-                if (shouldQuit) {
+                if (shouldQuit) { // if input is "x"
                     return null;
                 }
             }
@@ -120,6 +121,20 @@ public class TechJobs {
     // Print a list of jobs
     private static void printJobs(ArrayList<HashMap<String, String>> someJobs) {
 
-        System.out.println("printJobs is not implemented yet");
+
+
+        if (someJobs.isEmpty()){
+            System.out.print("No Results");
+        }else {
+            for (HashMap<String, String> job : someJobs) {
+                System.out.println("\n*****");
+                System.out.println("position type: " + job.get("position type"));
+                System.out.println("name: " + job.get("name"));
+                System.out.println("employer: " + job.get("employer"));
+                System.out.println("location: " + job.get("location"));
+                System.out.println("core competency: " + job.get("core competency"));
+                System.out.println("*****");
+            }
+        }
     }
 }
