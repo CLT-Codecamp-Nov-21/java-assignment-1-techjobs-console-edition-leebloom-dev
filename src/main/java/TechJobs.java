@@ -125,15 +125,18 @@ public class TechJobs {
         // if the array list doesn't have the HashMap
         if (someJobs.isEmpty()){
             System.out.print("No Results");
+            return;
         }else {
-            // for each Array List index that has a HashMap
+            // for each HashMap in the ArrayList someJobs
             for (HashMap<String, String> job : someJobs) {
                 System.out.println("\n*****");
-                System.out.println("name: " + job.get("name"));
-                System.out.println("employer: " + job.get("employer"));
-                System.out.println("location: " + job.get("location"));
-                System.out.println("position type: " + job.get("position type"));
-                System.out.println("core competency: " + job.get("core competency"));
+
+                // for each key in the set of keys in HashMap job
+                for (String someKey : job.keySet()) {
+                    // Print the key and the value from the HashMap
+                    System.out.println(someKey + ": " + job.get(someKey));
+                }
+
                 System.out.println("*****");
 
             }
