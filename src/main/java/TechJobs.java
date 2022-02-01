@@ -124,7 +124,7 @@ public class TechJobs {
 
         // if the array list doesn't have the HashMap
         if (someJobs.isEmpty()){
-            System.out.print("No Results");
+            System.out.println("No Results");
             return;
         }else {
             // for each HashMap in the ArrayList someJobs
